@@ -88,8 +88,12 @@ openTaskFormBtn.addEventListener("click", () =>
 closeTaskFormBtn.addEventListener("click", () => {
   const formInputsContainValues =
     titleInput.value || dateInput.value || descriptionInput.value;
+  const formInputValuesUpdated =
+    titleInput.value !== currentTask.title ||
+    dateInput.value !== currentTask.date ||
+    descriptionInput.value !== currentTask.description;
   if (formInputsContainValues) {
-    confirmCloseDialog.showModal();
+    confirmCloseDialog.showModal() && formInputValuesUpdated;
   } else {
     reset();
   }
