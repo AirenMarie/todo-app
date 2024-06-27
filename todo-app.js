@@ -74,6 +74,7 @@ const editTask = (buttonEl) => {
 };
 
 const reset = () => {
+  
   titleInput.value = "";
   dateInput.value = "";
   descriptionInput.value = "";
